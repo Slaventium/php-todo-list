@@ -7,10 +7,9 @@ include(__DIR__ . '/../bootstrap.php');
 $urlMap = [
     '/login' => 'login.php',
     '/logout' => 'logout.php',
-    '/tasks' => 'tasks.php',
     '/create-task' => 'create-task.php',
     '/list-tasks' => 'list-tasks.php',
-    '/' => 'tasks.php',
+    '/' => 'create-task.php',
     '/edit-task' => 'edit-task.php',
     '/mark-as-done' => 'mark-as-done.php',
     '/delete-task' => 'delete-task.php'
