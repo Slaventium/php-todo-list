@@ -6,5 +6,6 @@ if (!isset($_SESSION)) {
 
 if (!isset($_SESSION['authenticated_user']) && $_SERVER['PHP_SELF'] !== '/login') {
     header('Location: /login');
-    exit;
+} else if (isset($_SESSION['authenticated_user']) && $_SERVER['PHP_SELF'] === '/login') {
+    header('Location: /create-task');
 }
