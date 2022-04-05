@@ -21,7 +21,11 @@ $tasksData = load_all_tasks_data();
     }
 ?>
 <?php include(__DIR__ . '/../_header.php'); ?>
+
+<?php if ($_SESSION['referer']['previousPage'] === '/list-tasks') : ?>
     <p><a href="/list-tasks">Go back to the list</a></p>
+<?php endif; ?>
+
     <h1>Manage tasks</h1>
     <p>New Task</p>
 <?php
