@@ -1,10 +1,7 @@
 <?php
 include(__DIR__ . '/../bootstrap.php');
 include(__DIR__ . '/functions/task-crud.php');
-if (!isset($_SESSION['authenticated_user'])) {
-    header('Location: /../login');
-    exit;
-}
+
 $formErrors = [];
 $tasksData = load_all_tasks_data();
     if ($_SERVER['REQUEST_METHOD'] === 'POST') {

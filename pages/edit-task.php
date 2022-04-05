@@ -1,10 +1,7 @@
 <?php
 include(__DIR__ . '/../bootstrap.php');
 include(__DIR__ . '/functions/task-crud.php');
-if (!isset($_SESSION['authenticated_user'])) {
-    header('Location: /../login');
-    exit;
-}
+
 if (!isset($_GET['id'])) {
     header('Location: /list-tasks');
     exit;

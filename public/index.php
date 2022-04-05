@@ -1,4 +1,7 @@
 <?php
+
+require_once '../vendor/autoload.php';
+
 include(__DIR__ . '/../bootstrap.php');
 
 $urlMap = [
@@ -7,14 +10,15 @@ $urlMap = [
     '/tasks' => 'tasks.php',
     '/create-task' => 'create-task.php',
     '/list-tasks' => 'list-tasks.php',
-    '/' => 'homepage.php',
+    '/' => 'tasks.php',
     '/edit-task' => 'edit-task.php',
     '/mark-as-done' => 'mark-as-done.php',
     '/delete-task' => 'delete-task.php'
 ];
-$pathInfo = $_SERVER['PATH_INFO'] ?? '/';
-if (isset($urlMap[$pathInfo])) {
-// Load a specific page script
+$pathInfo = $_SERVER['PHP_SELF'] ?? '/';
+
+if (array_key_exists($pathInfo, $urlMap)) {
+    // Load a specific page script
     include(__DIR__ . '/../pages/' . $urlMap[$pathInfo]);
 } else {
 // Produce a 404 response
